@@ -1,12 +1,15 @@
+
 import './App.css'
+import Coin from './features/coin/Coin'
+import Counter from './features/counter/Counter'
 
 function App() {
+  
 
   return (
     <div className='App'>
-      <button className='button' aria-label='increment value' onClick={() => {}}>+</button>
-      <span className='value'>0</span>
-      <button className='button' aria-label='decrement value' onClick={() => {}}>-</button>
+      <Counter />
+      {/* <Coin /> */}
     </div>
   )
 }
