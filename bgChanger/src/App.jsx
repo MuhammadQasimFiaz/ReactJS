@@ -12,11 +12,11 @@ function App() {
           {/* <button onClick={ (e) => setColor(e.target.style.backgroundColor) } className='outline-none px-4 py-1 rounded-full text-white shadow-lg' style={{ backgroundColor: "green" }} >Green</button> */}
           {/* <button onClick={ () => setColor("blue") } className='outline-none px-4 py-1 rounded-full text-white shadow-lg' style={{ backgroundColor: "blue" }} >Blue</button> */}
           {/* <button onClick={ (e) => setColor(e.target.style.backgroundColor) } className='outline-none px-4 py-1 rounded-full text-white shadow-lg' style={{ backgroundColor: "yellow" }} >Yellow</button> */}
-          <Button color="red" onClick={ (e) => setColor(e.target.style.backgroundColor) }/>
-          <Button color="green" onClick={ (e) => setColor(e.target.style.backgroundColor) }/>
-          <Button color="blue" onClick={ (e) => setColor(e.target.style.backgroundColor) }/>
-          <Button color="black" onClick={ (e) => setColor(e.target.style.backgroundColor) }/>
-          <Button color="yellow" onClick={ (e) => setColor(e.target.style.backgroundColor) }/>
+          <Button color="red" onClick={(e) => setColor(e.target.style.backgroundColor)} />
+          <Button color="green" onClick={(e) => setColor(e.target.style.backgroundColor)} />
+          <Button color="blue" onClick={(e) => setColor(e.target.style.backgroundColor)} />
+          <Button color="black" onClick={(e) => setColor(e.target.style.backgroundColor)} />
+          <Button color="yellow" onClick={(e) => setColor(e.target.style.backgroundColor)} />
         </div>
       </div>
     </div>
