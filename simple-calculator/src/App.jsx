@@ -1,6 +1,7 @@
 import { useState } from "react";
 import DisplayButtons from "./components/DisplayButtons";
 import DisplayResult from "./components/DisplayResult";
+import { CalculateProvider } from "./context/calculateContext";
 
 const App = () => {
   const [display, setDisplay] = useState("")
@@ -10,8 +11,8 @@ const App = () => {
 
     if(['+','-','x','÷','%'].includes(clickValue)) {
       if(['+','-','x','÷','%'].includes(display.slice(-1))) {
+        // console.log(display.slice(0, -1) + clickValue)
         setDisplay(display.slice(0, -1) + clickValue)
-        console.log(clickValue)
       } else {
         setDisplay(display + clickValue)
       }
@@ -41,12 +42,14 @@ const App = () => {
   }
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-      <div className="bg-gray-800 p-6 rounded-lg shadow-lg w-80">
-        <DisplayResult display={display}/>
-        <DisplayButtons handleClick={handleClick} clear={clear} backSpace={backSpace}/>
+    <CalculateProvider value={{display, handleClick, clear, backSpace}}>
+      <div className="flex justify-center items-center h-screen bg-gray-100">
+        <div className="bg-gray-800 p-6 rounded-lg shadow-lg w-80">
+          <DisplayResult />
+          <DisplayButtons />
+        </div>
       </div>
-    </div>
+    </CalculateProvider>
   );
 }
 

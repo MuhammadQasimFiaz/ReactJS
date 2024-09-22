@@ -1,4 +1,7 @@
-function DisplayResult({display}) {
+import { useCalculate } from "../context/calculateContext"
+
+function DisplayResult() {
+  const {display} = useCalculate()
   return (
     <div className="mb-5">
       <input
