@@ -7,7 +7,29 @@ const App = () => {
 
   const handleClick = (e) => {
     const clickValue = e.target.name
-    setDisplay(display + clickValue)
+
+    if(['+','-','x','÷','%'].includes(clickValue)) {
+      if(['+','-','x','÷','%'].includes(display.slice(-1))) {
+        setDisplay(display.slice(0, -1) + clickValue)
+        console.log(clickValue)
+      } else {
+        setDisplay(display + clickValue)
+      }
+    } else if(clickValue === '=') {
+      calculateResult()
+    } else {
+      setDisplay(display + clickValue)
+    }
+  }
+
+  const calculateResult = ()=> {
+    let calculate = display.replace(/×/g, '*').replace(/÷/g, '/').replace(/−/g, '-').replace(/%/g, '/100')
+    try {
+      const evalResult = eval(calculate)
+      setDisplay(evalResult.toString())
+    } catch {
+      setDisplay("Error")
+    }
   }
 
   const clear = () => {
