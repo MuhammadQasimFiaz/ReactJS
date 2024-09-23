@@ -9,8 +9,10 @@ const App = () => {
   const handleClick = (e) => {
     const clickValue = e.target.name
 
-    if(['+','-','x','÷','%'].includes(clickValue)) {
-      if(['+','-','x','÷','%'].includes(display.slice(-1))) {
+    if (display === "Error" || display === "Infinity") {
+      setDisplay(clickValue)
+    } else if(['+','-','*','/','%'].includes(clickValue)) {
+      if(['+','-','*','/','%'].includes(display.slice(-1))) {
         // console.log(display.slice(0, -1) + clickValue)
         setDisplay(display.slice(0, -1) + clickValue)
       } else {
@@ -24,9 +26,8 @@ const App = () => {
   }
 
   const calculateResult = ()=> {
-    let calculate = display.replace(/×/g, '*').replace(/÷/g, '/').replace(/−/g, '-').replace(/%/g, '/100')
     try {
-      const evalResult = eval(calculate)
+      const evalResult = eval(display)
       setDisplay(evalResult.toString())
     } catch {
       setDisplay("Error")
