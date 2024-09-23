@@ -6,8 +6,10 @@ function DisplayButtons() {
   const {clear, backSpace} = useCalculate()
   return (
     <div className="grid grid-cols-4 gap-3">
-      <button className="bg-gray-600 p-4 text-white text-xl rounded-md" onClick={backSpace}><FaBackspace /></button>
-      <button className="bg-gray-600 p-4 text-white text-xl rounded-md" onClick={clear} >C</button>
+      {/* <button className="bg-gray-600 p-4 text-white text-xl rounded-md" onClick={backSpace}><FaBackspace /></button> */}
+      <Buttons className="bg-gray-600 p-4 text-white text-xl rounded-md" value={<FaBackspace />} onClick={backSpace}/>
+      {/* <button className="bg-gray-600 p-4 text-white text-xl rounded-md" onClick={clear} >C</button> */}
+      <Buttons className="bg-gray-600 p-4 text-white text-xl rounded-md" value={"C"} onClick={clear}/>
       {/* <Buttons className="bg-gray-600 p-4 text-white text-xl rounded-md" name={"±"} value={"±"} /> */}
       <Buttons className="bg-gray-600 p-4 text-white text-xl rounded-md" name={"%"} value={"%"} />
       <Buttons className="bg-yellow-500 p-4 text-white text-xl rounded-md" name={"/"} value={"/"} />
