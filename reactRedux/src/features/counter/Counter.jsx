@@ -6,11 +6,11 @@ function Counter() {
   const themeTextColor = useSelector((state) => state.theme.color)
   const dispatch = useDispatch()
   return (
-    <div>
-      <button className='button' aria-label='increment value' onClick={() => { dispatch(increment()) }}>+</button>
-      <span className='value' style={{color: themeTextColor}}>counter: {count}</span>
-      <button className='button' aria-label='decrement value' onClick={() => { dispatch(decrement()) }}>-</button>
-      <button className='button' aria-label='' onClick={() => { dispatch(incrementByAmount(10)) }}>increment by 10</button>
+    <div className='counter'>
+      <button className='button div1' aria-label='decrement value' onClick={() => { dispatch(decrement()) }}>-</button>
+      <span className='value div2' style={{color: themeTextColor}}>counter: {count}</span>
+      <button className='button div3' aria-label='increment value' onClick={() => { dispatch(increment()) }}>+</button>
+      <button className='button div4' aria-label='' onClick={() => { dispatch(incrementByAmount(10)) }}>increment by 10</button>
     </div>
   )
 }
