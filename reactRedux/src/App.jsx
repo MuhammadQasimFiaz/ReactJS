@@ -6,7 +6,7 @@ import Theme from './features/theme/Theme'
 function App() {
   
   return (
-    <div className='App'>
+    <div>
       <Counter />
       <Coin />
       <Theme />
