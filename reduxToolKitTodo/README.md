@@ -7,6 +7,7 @@ This is a simple to-do list application built with React.js. It allows users to 
 - Add new tasks
 - Mark tasks as completed
 - Delete tasks
+- Update tasks
 - Responsive design
 
 ![Screenshot](./src/assets/Screenshot.png)
