@@ -4,7 +4,7 @@ import {
   updateTodo,
   completeTodo,
 } from "../features/todo/todoSlice";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Todos() {
   const todos = useSelector((state) => state.todos);
@@ -20,6 +20,10 @@ function Todos() {
       setNewText("");
     }
   };
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   const handleEditClick = (todo) => {
     setIsEditable(todo.id);
