@@ -25,7 +25,7 @@ function Todos() {
 
   return (
     <>
-    <div>Todos</div>
+    <h1 className='uppercase text-white mt-2'>Todos</h1>
     <ul className="list-none">
         {todos.map((todo) => (
           <li
@@ -45,6 +45,7 @@ function Todos() {
                 {todo.text}
               </div>
             )}
+            <div className='flex gap-3'>
             {editableTodoId === todo.id ? (
               <button
                 onClick={() => handleUpdateClick(todo.id)}
@@ -79,6 +80,7 @@ function Todos() {
                 />
               </svg>
             </button>
+            </div>
           </li>
         ))}
       </ul>
