@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './App.css'
 import useCurrencyInfo from './hooks/useCurrencyInfo'
 import InputBox from './components/InputBox'
 
@@ -38,14 +37,14 @@ function App() {
               <InputBox
                 label="From"
                 amount={amount}
+                onAmountChange={(amount) => setAmount(amount)}
                 currencyOptions={options}
                 onCurrencyChange={(currency) => setFrom(currency)}
                 selectCurrency={from}
-                onAmountChange={(amount) => setAmount(amount)}
               />
             </div>
             <div className="relative w-full h-0.5">
-              <button type='button' className='absolute left-1/2 translate-x-1/2 translate-y-1/2 border-2 border-white rounded-md bg-blue-600 text-white px-2 py-0.5' onClick={swap}>
+              <button type='button' className='absolute left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-white rounded-md bg-blue-600 text-white px-2 py-0.5' onClick={swap}>
                 swap
               </button>
             </div>
@@ -53,10 +52,10 @@ function App() {
               <InputBox
                 label="To"
                 amount={convertedAmount}
+                amountDisable
                 currencyOptions={options}
                 onCurrencyChange={(currency) => setTo(currency)}
                 selectCurrency={to}
-                amountDisable
               />
             </div>
             <button type="submit" className='w-full bg-blue-600 text-white px-4 py-3 rounded-lg'>
